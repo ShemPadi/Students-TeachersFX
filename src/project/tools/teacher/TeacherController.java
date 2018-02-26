@@ -650,11 +650,6 @@ public class TeacherController implements Initializable {
     }
 
         
-        
-        
-        
-        
-    
 
     private void setEnableforCompute() {
         teacherField.setDisable(true);
