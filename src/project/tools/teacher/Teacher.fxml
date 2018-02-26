@@ -1,0 +1,167 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXComboBox?>
+<?import com.jfoenix.controls.JFXDatePicker?>
+<?import com.jfoenix.controls.JFXTextField?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Menu?>
+<?import javafx.scene.control.MenuBar?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.control.SplitPane?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane id="AnchorPane" prefHeight="680.0" prefWidth="1366.0" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1" fx:controller="project.tools.teacher.TeacherController">
+   <children>
+      <SplitPane cacheShape="false" dividerPositions="0.32428466617754953" focusTraversable="false" prefHeight="700.0" prefWidth="1365.0" scaleShape="false">
+         <items>
+            <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="160.0" prefWidth="100.0">
+               <children>
+                  <Label layoutX="14.0" layoutY="91.0" prefHeight="24.0" prefWidth="152.0" text="Teacher Details" textFill="#4b4e54" wrapText="true">
+                     <font>
+                        <Font name="Segoe UI Bold" size="13.0" />
+                     </font>
+                  </Label>
+                  <Separator layoutX="-40.0" layoutY="117.0" prefHeight="4.0" prefWidth="496.0" />
+                  <JFXButton fx:id="addBtn" buttonType="RAISED" layoutX="41.0" layoutY="36.0" onAction="#addnewTea" prefHeight="2.0" prefWidth="98.0" ripplerFill="WHITE" style="-fx-background-color: #09B28C;" text="Add New" textFill="WHITE">
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                  </JFXButton>
+                  <JFXButton fx:id="deleteBtn" buttonType="RAISED" layoutX="295.0" layoutY="36.0" onAction="#deleteTea" prefHeight="2.0" prefWidth="98.0" ripplerFill="WHITE" style="-fx-background-color: #FF3F3C;" text="Delete" textFill="WHITE">
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                  </JFXButton>
+                  <JFXButton fx:id="editBtn" buttonType="RAISED" layoutX="163.0" layoutY="36.0" onAction="#editTea" prefHeight="2.0" prefWidth="98.0" ripplerFill="WHITE" style="-fx-background-color: #09B28C;" text="Edit" textFill="WHITE">
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                  </JFXButton>
+                  <JFXTextField fx:id="teacherField" disable="true" labelFloat="true" layoutX="24.0" layoutY="138.0" onKeyTyped="#numberyOnly" prefHeight="4.0" prefWidth="122.0" promptText="Teacher ID" />
+                  <JFXComboBox fx:id="department" disable="true" editable="true" layoutX="169.0" layoutY="138.0" prefHeight="25.0" prefWidth="121.0" promptText="Department" />
+                  <JFXComboBox fx:id="designation" disable="true" editable="true" layoutX="309.0" layoutY="138.0" prefHeight="25.0" prefWidth="121.0" promptText="Designation" />
+                  <JFXTextField fx:id="firstnameField" disable="true" labelFloat="true" layoutX="24.0" layoutY="182.0" prefHeight="4.0" prefWidth="122.0" promptText="First Name" />
+                  <JFXTextField fx:id="midnameField" disable="true" labelFloat="true" layoutX="169.0" layoutY="182.0" prefHeight="4.0" prefWidth="122.0" promptText="Middle Name" />
+                  <JFXTextField fx:id="lastnameField" disable="true" labelFloat="true" layoutX="309.0" layoutY="182.0" prefHeight="4.0" prefWidth="122.0" promptText="Last Name" />
+                  <JFXComboBox fx:id="gender" disable="true" editable="true" layoutX="23.0" layoutY="230.0" prefHeight="25.0" prefWidth="121.0" promptText="Gender" />
+                  <JFXDatePicker fx:id="dob" defaultColor="#4059a9" disable="true" layoutX="169.0" layoutY="227.0" prefHeight="20.0" prefWidth="134.0" promptText="Date of Birth" />
+                  <JFXTextField fx:id="age" disable="true" labelFloat="true" layoutX="309.0" layoutY="230.0" onMouseEntered="#autoAge" prefHeight="4.0" prefWidth="122.0" promptText="Age" />
+                  <Label disable="true" layoutX="12.0" layoutY="270.0" prefHeight="24.0" prefWidth="130.0" text="Contact Information" textFill="#4b4e54" wrapText="true">
+                     <font>
+                        <Font name="Segoe UI Bold" size="12.0" />
+                     </font>
+                  </Label>
+                  <JFXTextField fx:id="landphoneField" disable="true" labelFloat="true" layoutX="22.0" layoutY="301.0" onKeyTyped="#numberyOnly" prefHeight="4.0" prefWidth="122.0" promptText="Land Phone" />
+                  <JFXTextField fx:id="mobilenumField" disable="true" labelFloat="true" layoutX="169.0" layoutY="301.0" onKeyTyped="#numberyOnly" prefHeight="4.0" prefWidth="122.0" promptText="Mobile Number" />
+                  <JFXTextField fx:id="address1Field" disable="true" labelFloat="true" layoutX="22.0" layoutY="340.0" prefHeight="25.0" prefWidth="405.0" promptText="Unit Number/House Number/Building, Street Name" />
+                  <JFXTextField fx:id="address2Field" disable="true" labelFloat="true" layoutX="22.0" layoutY="379.0" prefHeight="25.0" prefWidth="405.0" promptText="Barangay/Distict Name,  City/Municipality" />
+                  <JFXTextField fx:id="postalField" disable="true" labelFloat="true" layoutX="22.0" layoutY="418.0" onKeyTyped="#numberyOnly" prefHeight="4.0" prefWidth="122.0" promptText="Postal Code" />
+                  <JFXTextField fx:id="emailField" disable="true" labelFloat="true" layoutX="169.0" layoutY="418.0" prefHeight="25.0" prefWidth="228.0" promptText="Email Address" />
+                  <JFXTextField fx:id="teachHours" disable="true" labelFloat="true" layoutX="22.0" layoutY="498.0" onKeyTyped="#numberyOnly" prefHeight="4.0" prefWidth="122.0" promptText="Teaching Hours" />
+                  <JFXTextField fx:id="overTime" disable="true" labelFloat="true" layoutX="222.0" layoutY="498.0" onKeyTyped="#numberyOnly" onMouseEntered="#otCompu" prefHeight="4.0" prefWidth="122.0" promptText="Overtime Hours" />
+                  <JFXTextField fx:id="housingField" disable="true" labelFloat="true" layoutX="22.0" layoutY="537.0" onKeyTyped="#numberyOnly" prefHeight="25.0" prefWidth="171.0" promptText="Housing Allowance" />
+                  <JFXTextField fx:id="medField" disable="true" labelFloat="true" layoutX="22.0" layoutY="574.0" onKeyTyped="#numberyOnly" prefHeight="25.0" prefWidth="171.0" promptText="Medical Allowance" />
+                  <JFXTextField fx:id="travelField" disable="true" labelFloat="true" layoutX="22.0" layoutY="615.0" onKeyTyped="#numberyOnly" prefHeight="25.0" prefWidth="171.0" promptText="Travelling Allowance" />
+                  <JFXTextField fx:id="netField" disable="true" labelFloat="true" layoutX="206.0" layoutY="569.0" onKeyTyped="#numberyOnly" prefHeight="25.0" prefWidth="228.0" promptText="Net Salary" />
+                  <Separator disable="true" layoutX="9.0" layoutY="646.0" prefHeight="6.0" prefWidth="447.0" />
+                  <JFXButton fx:id="saveBtn" buttonType="RAISED" disable="true" layoutX="314.0" layoutY="657.0" onAction="#saveTea" prefHeight="39.0" prefWidth="98.0" ripplerFill="WHITE" style="-fx-background-color: #408E2F;" text="Save" textFill="WHITE">
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                  </JFXButton>
+                  <JFXButton fx:id="clearBtn" buttonType="RAISED" disable="true" layoutX="207.0" layoutY="656.0" onAction="#clearFields" prefHeight="22.0" prefWidth="98.0" ripplerFill="WHITE" style="-fx-background-color: #FF5151;" text="Clear" textFill="WHITE">
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                  </JFXButton>
+                  <Label disable="true" layoutX="12.0" layoutY="454.0" prefHeight="24.0" prefWidth="130.0" text="Salary" textFill="#4b4e54" wrapText="true">
+                     <font>
+                        <Font name="Segoe UI Bold" size="12.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="202.0" layoutY="597.0" prefHeight="15.0" prefWidth="237.0" text="*net salary=total salary+housing+medical+traveling">
+                     <font>
+                        <Font name="System Italic" size="10.0" />
+                     </font>
+                  </Label>
+                  <JFXButton fx:id="backBtn" buttonType="RAISED" layoutX="14.0" layoutY="658.0" onAction="#backBtn" prefHeight="23.0" prefWidth="82.0" ripplerFill="WHITE" style="-fx-background-color: #FF5151;" text="Back" textFill="WHITE">
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                  </JFXButton>
+                  <JFXButton fx:id="saveUpdate" buttonType="RAISED" layoutX="163.0" layoutY="81.0" onAction="#saveUpdate" prefHeight="0.0" prefWidth="98.0" ripplerFill="WHITE" style="-fx-background-color: #09B28C;" text="Save Update" textFill="WHITE" />
+               </children>
+            </AnchorPane>
+            <AnchorPane focusTraversable="true" minHeight="0.0" minWidth="0.0" prefHeight="160.0" prefWidth="841.0" SplitPane.resizableWithParent="false">
+               <children>
+                  <JFXTextField fx:id="searchField" labelFloat="true" layoutX="616.0" layoutY="38.0" prefHeight="25.0" prefWidth="196.0" promptText="Teacher ID" />
+                  <JFXButton fx:id="searchBtn" buttonType="RAISED" layoutX="818.0" layoutY="34.0" onAction="#searchTea" prefHeight="28.0" prefWidth="73.0" ripplerFill="WHITE" style="-fx-background-color: #09B28C;" text="Search" textFill="WHITE">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </JFXButton>
+                  <TableView fx:id="tableView1" layoutX="-4.0" layoutY="113.0" prefHeight="585.0" prefWidth="925.0">
+                     <columns>
+                         <TableColumn fx:id="TeacherTableTeacherID" editable="false" prefWidth="75.0" sortable="false" text="ID" />
+                        <TableColumn fx:id="TeacherTableTeacherFname" editable="false" prefWidth="75.0" sortable="false" text="First Name" />
+                        <TableColumn fx:id="TeacherTableTeacherMname" editable="false" prefWidth="75.0" sortable="false" text="Mid Name" />
+                        <TableColumn fx:id="TeacherTableTeacherLname" editable="false" prefWidth="75.0" sortable="false" text="Last Name" />
+                        <TableColumn fx:id="TeacherTableTeacherDepartment" editable="false" prefWidth="118.0" sortable="false" text="Department" />
+                        <TableColumn fx:id="TeacherTableTeacherDesignation" editable="false" prefWidth="88.0" sortable="false" text="Designation" />
+                        <TableColumn fx:id="TeacherTableDataTeacherDateofBirth" editable="false" minWidth="0.0" prefWidth="36.0" sortable="false" text="DOB" />
+                        <TableColumn fx:id="TeacherTableDataTeacherAge" editable="false" minWidth="0.0" prefWidth="0.0" sortable="false" text="Age" />
+                        <TableColumn fx:id="TeacherTableDataTeacherGender" editable="false" prefWidth="46.0" sortable="false" text="Gender" />
+                        <TableColumn fx:id="TeacherTableDataTeacherLandPhone" editable="false" prefWidth="90.0" sortable="false" text="Land Phone" />
+                        <TableColumn fx:id="TeacherTableDataTeacherMobileNo" editable="false" prefWidth="83.0" sortable="false" text="Mobile No." />
+                        <TableColumn fx:id="TeacherTableDataTeacherStreet" editable="false" prefWidth="102.0" sortable="false" text="Street No." />
+                        <TableColumn fx:id="TeacherTableDataTeacherCity" editable="false" prefWidth="112.0" sortable="false" text="City" />
+                        <TableColumn fx:id="TeacherTableDataTeacherPostal" editable="false" prefWidth="75.0" sortable="false" text="Postal Code" />
+                        <TableColumn fx:id="TeacherTableDataTeacherEmail" editable="false" prefWidth="75.0" sortable="false" text="Email" />
+                        <TableColumn fx:id="TeacherTableDataTeacherTeachingHours" editable="false" prefWidth="75.0" sortable="false" text="Teaching Hours" />
+                        <TableColumn fx:id="TeacherTableDataTeacherHousingAllowance" editable="false" prefWidth="75.0" sortable="false" text="Housing Allowance" />
+                        <TableColumn fx:id="TeacherTableDataTeacherMedicalAllowance" editable="false" prefWidth="75.0" sortable="false" text="Medical Allowance" />
+                        <TableColumn fx:id="TeacherTableDataTeacherTravellingAllowance" editable="false" prefWidth="75.0" sortable="false" text="Housing Allowance" />
+                        <TableColumn fx:id="TeacherTableDataTeacherOT" editable="false" prefWidth="75.0" sortable="false" text="Overtime Hours" />
+                        <TableColumn fx:id="TeacherTableDataTeacherNETSalary" editable="false" prefWidth="75.0" sortable="false" text="NET Salary" />
+                     </columns>
+                  </TableView>
+                  <JFXButton fx:id="refresh" buttonType="RAISED" layoutX="818.0" layoutY="71.0" onAction="#refresh" prefHeight="28.0" prefWidth="73.0" ripplerFill="WHITE" style="-fx-background-color: #09B28C;" text="Refresh" textFill="WHITE">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </JFXButton>
+               </children>
+            </AnchorPane>
+         </items>
+      </SplitPane>
+      <AnchorPane prefHeight="22.0" prefWidth="1368.0">
+         <children>
+            <MenuBar layoutY="-3.0" prefHeight="25.0" prefWidth="1367.0">
+               <menus>
+                  <Menu fx:id="file" mnemonicParsing="false" text="File">
+                     <items>
+                        <MenuItem mnemonicParsing="false" text="Close" />
+                        <MenuItem mnemonicParsing="false" text="Back" />
+                     </items>
+                  </Menu>
+                  <Menu mnemonicParsing="false" text="Edit">
+                     <items>
+                        <MenuItem mnemonicParsing="false" text="Delete" />
+                     </items>
+                  </Menu>
+                  <Menu mnemonicParsing="false" text="Help">
+                     <items>
+                        <MenuItem mnemonicParsing="false" text="About" />
+                     </items>
+                  </Menu>
+               </menus>
+            </MenuBar>
+         </children>
+      </AnchorPane>
+   </children>
+</AnchorPane>

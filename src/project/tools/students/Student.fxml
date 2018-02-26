@@ -1,0 +1,153 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXComboBox?>
+<?import com.jfoenix.controls.JFXDatePicker?>
+<?import com.jfoenix.controls.JFXTextField?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Menu?>
+<?import javafx.scene.control.MenuBar?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.control.SplitPane?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane id="AnchorPane" prefHeight="600.0" prefWidth="1368.0" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1" fx:controller="project.tools.students.StudentController">
+   <children>
+      <AnchorPane prefHeight="22.0" prefWidth="1368.0">
+         <children>
+            <MenuBar layoutY="-3.0" prefHeight="25.0" prefWidth="1367.0">
+              <menus>
+                <Menu mnemonicParsing="false" text="File">
+                  <items>
+                    <MenuItem mnemonicParsing="false" text="Close" />
+                  </items>
+                </Menu>
+                <Menu mnemonicParsing="false" text="Edit">
+                  <items>
+                    <MenuItem mnemonicParsing="false" text="Delete" />
+                  </items>
+                </Menu>
+                <Menu mnemonicParsing="false" text="Help">
+                  <items>
+                    <MenuItem mnemonicParsing="false" text="About" />
+                  </items>
+                </Menu>
+              </menus>
+            </MenuBar>
+         </children>
+      </AnchorPane>
+      <SplitPane cacheShape="false" dividerPositions="0.3294203961848863" focusTraversable="false" layoutX="-3.0" layoutY="24.0" prefHeight="680.0" prefWidth="1365.0" scaleShape="false">
+        <items>
+          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="160.0" prefWidth="100.0">
+               <children>
+                  <Label layoutX="14.0" layoutY="91.0" prefHeight="24.0" prefWidth="152.0" text="Student Details" textFill="#4b4e54" wrapText="true">
+                     <font>
+                        <Font name="Segoe UI Bold" size="13.0" />
+                     </font>
+                  </Label>
+                  <Separator layoutX="-40.0" layoutY="117.0" prefHeight="4.0" prefWidth="568.0" />
+                  <JFXButton fx:id="addBtn" buttonType="RAISED" layoutX="45.0" layoutY="14.0" onAction="#addnewStu" prefHeight="2.0" prefWidth="98.0" ripplerFill="WHITE" style="-fx-background-color: #09B28C;" text="Add New" textFill="WHITE">
+                     <font>
+                        <Font size="18.0" />
+                     </font></JFXButton>
+                  <JFXButton fx:id="deleteBtn" buttonType="RAISED" layoutX="299.0" layoutY="14.0" onAction="#deleteStu" prefHeight="2.0" prefWidth="98.0" ripplerFill="WHITE" style="-fx-background-color: #FF3F3C;" text="Delete" textFill="WHITE">
+                     <font>
+                        <Font size="18.0" />
+                     </font></JFXButton>
+                  <JFXButton fx:id="editBtn" buttonType="RAISED" layoutX="167.0" layoutY="14.0" onAction="#editStu" prefHeight="2.0" prefWidth="98.0" ripplerFill="WHITE" style="-fx-background-color: #09B28C;" text="Edit" textFill="WHITE">
+                     <font>
+                        <Font size="18.0" />
+                     </font></JFXButton>
+                  <JFXTextField fx:id="studentField" disable="true" labelFloat="true" layoutX="24.0" layoutY="138.0" onKeyTyped="#numbersOnly" prefHeight="4.0" prefWidth="122.0" promptText="Student ID" />
+                  <JFXTextField fx:id="firstnameField" disable="true" labelFloat="true" layoutX="24.0" layoutY="182.0" prefHeight="4.0" prefWidth="122.0" promptText="First Name" />
+                  <JFXTextField fx:id="midnameField" disable="true" labelFloat="true" layoutX="170.0" layoutY="182.0" prefHeight="4.0" prefWidth="122.0" promptText="Middle Name" />
+                  <JFXTextField fx:id="lastnameField" disable="true" labelFloat="true" layoutX="315.0" layoutY="182.0" prefHeight="4.0" prefWidth="122.0" promptText="Last Name" />
+                  <JFXDatePicker fx:id="dob" defaultColor="#4059a9" disable="true" layoutX="171.0" layoutY="227.0" prefHeight="20.0" prefWidth="134.0" promptText="Date of Birth" />
+                  <JFXTextField fx:id="age" disable="true" labelFloat="true" layoutX="315.0" layoutY="230.0" onMouseEntered="#autoAge" prefHeight="4.0" prefWidth="122.0" promptText="Age" />
+                  <JFXTextField fx:id="numSub" disable="true" labelFloat="true" layoutX="23.0" layoutY="271.0" onKeyTyped="#numbersOnly" onMouseExited="#subjects" prefHeight="4.0" prefWidth="122.0" promptText="No. of Subjects" />
+                  <JFXTextField fx:id="numRepsub" disable="true" labelFloat="true" layoutX="170.0" layoutY="271.0" onKeyTyped="#numbersOnly" onMouseExited="#repSolve" prefHeight="25.0" prefWidth="143.0" promptText="No. of Repeated Subjects" />
+                  <JFXTextField fx:id="tuitionFee" disable="true" labelFloat="true" layoutX="23.0" layoutY="309.0" onKeyTyped="#numbersOnly" onMouseEntered="#solveTuition" prefHeight="4.0" prefWidth="122.0" promptText="Tuition Fee" />
+                  <JFXTextField fx:id="tuitionFeeRep" disable="true" labelFloat="true" layoutX="170.0" layoutY="309.0" onKeyTyped="#numbersOnly" onMouseEntered="#solveTuitionRep" prefHeight="4.0" prefWidth="122.0" promptText="Tuition Fee (Repeated)" />
+                  <JFXTextField fx:id="amountDepo" disable="true" labelFloat="true" layoutX="315.0" layoutY="309.0" onKeyTyped="#numbersOnly" prefHeight="4.0" prefWidth="122.0" promptText="Amount Deposited" />
+                  <JFXTextField fx:id="remainingBalance" disable="true" labelFloat="true" layoutX="170.0" layoutY="351.0" onKeyTyped="#numbersOnly" onMouseEntered="#remainingMoney" prefHeight="4.0" prefWidth="122.0" promptText="Remaining Balance" />
+                  <Label layoutX="17.0" layoutY="387.0" prefHeight="24.0" prefWidth="130.0" text="Contact Information" textFill="#4b4e54" wrapText="true">
+                     <font>
+                        <Font name="Segoe UI Bold" size="12.0" />
+                     </font>
+                  </Label>
+                  <JFXTextField fx:id="landphoneField" disable="true" labelFloat="true" layoutX="21.0" layoutY="411.0" prefHeight="4.0" prefWidth="122.0" promptText="Land Phone" />
+                  <JFXTextField fx:id="mobilenumField" disable="true" labelFloat="true" layoutX="166.0" layoutY="411.0" prefHeight="4.0" prefWidth="122.0" promptText="Mobile Number" />
+                  <JFXTextField fx:id="address1Field" disable="true" labelFloat="true" layoutX="21.0" layoutY="450.0" prefHeight="25.0" prefWidth="405.0" promptText="Unit Number/House Number/Building, Street Name" />
+                  <JFXTextField fx:id="address2Field" disable="true" labelFloat="true" layoutX="21.0" layoutY="489.0" prefHeight="25.0" prefWidth="405.0" promptText="Barangay/Distict Name,  City/Municipality" />
+                  <JFXTextField fx:id="postalField" disable="true" labelFloat="true" layoutX="21.0" layoutY="528.0" prefHeight="4.0" prefWidth="122.0" promptText="Postal Code" />
+                  <JFXTextField fx:id="emailField" disable="true" labelFloat="true" layoutX="166.0" layoutY="528.0" prefHeight="25.0" prefWidth="228.0" promptText="Email Address" />
+                  <Separator layoutX="-26.0" layoutY="563.0" prefHeight="4.0" prefWidth="453.0" />
+                  <JFXButton fx:id="saveBtn" buttonType="RAISED" disable="true" layoutX="325.0" layoutY="600.0" onAction="#saveStu" prefHeight="46.0" prefWidth="98.0" ripplerFill="WHITE" style="-fx-background-color: #408E2F;" text="Save" textFill="WHITE">
+                     <font>
+                        <Font size="18.0" />
+                     </font></JFXButton>
+                  <JFXButton fx:id="clearBtn" buttonType="RAISED" disable="true" layoutX="206.0" layoutY="600.0" onAction="#clearFields" prefHeight="46.0" prefWidth="98.0" ripplerFill="WHITE" style="-fx-background-color: #FF5151;" text="Clear" textFill="WHITE">
+                     <font>
+                        <Font size="18.0" />
+                     </font></JFXButton>
+                  <JFXButton fx:id="backBtn" buttonType="RAISED" layoutX="14.0" layoutY="627.0" onAction="#backBtn" prefHeight="28.0" prefWidth="82.0" ripplerFill="WHITE" style="-fx-background-color: #FF5151;" text="Back" textFill="WHITE">
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                  </JFXButton>
+                  <JFXButton fx:id="saveUpdate" buttonType="RAISED" layoutX="167.0" layoutY="64.0" onAction="#saveUpdate" prefHeight="0.0" prefWidth="98.0" ripplerFill="WHITE" style="-fx-background-color: #09B28C;" text="Save Update" textFill="WHITE" />
+                  <JFXTextField fx:id="totalFee" disable="true" labelFloat="true" layoutX="23.0" layoutY="351.0" onKeyTyped="#numbersOnly" onMouseEntered="#totalfee" prefHeight="4.0" prefWidth="122.0" promptText="Total Fee" />
+                  <JFXComboBox fx:id="genderField" disable="true" editable="true" layoutX="22.0" layoutY="230.0" prefHeight="25.0" prefWidth="121.0" promptText="Gender" />
+                  <JFXComboBox fx:id="degreeField" disable="true" editable="true" layoutX="316.0" layoutY="138.0" prefHeight="25.0" prefWidth="121.0" promptText="Degree" />
+                  <JFXComboBox fx:id="yearField" disable="true" editable="true" layoutX="171.0" layoutY="138.0" prefHeight="25.0" prefWidth="121.0" promptText="Year/Level" />
+               </children>
+            </AnchorPane>
+          <AnchorPane focusTraversable="true" minHeight="0.0" minWidth="0.0" prefHeight="160.0" prefWidth="100.0" SplitPane.resizableWithParent="false">
+               <children>
+                  <JFXTextField fx:id="searchField" labelFloat="true" layoutX="596.0" layoutY="18.0" prefHeight="25.0" prefWidth="196.0" promptText="Student ID" />
+                  <JFXButton fx:id="searchBtn" buttonType="RAISED" layoutX="798.0" layoutY="14.0" onAction="#searchStu" prefHeight="28.0" prefWidth="73.0" ripplerFill="WHITE" style="-fx-background-color: #09B28C;" text="Search" textFill="WHITE">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </JFXButton>
+                  <TableView fx:id="tableView" layoutY="101.0" prefHeight="558.0" prefWidth="655.0" AnchorPane.bottomAnchor="19.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="101.0">
+                    <columns>
+                      <TableColumn fx:id="studentTableStudentID" editable="false" prefWidth="75.0" text="ID" />
+                      <TableColumn fx:id="studentTableStudentFname" editable="false" prefWidth="75.0" text="First Name" />
+                        <TableColumn fx:id="studentTableStudentMname" editable="false" prefWidth="75.0" text="Mid Name" />
+                        <TableColumn fx:id="studentTableStudentLname" editable="false" prefWidth="75.0" text="Last Name" />
+                        <TableColumn fx:id="studentTableStudentLevel" editable="false" prefWidth="85.0" text="Year Level" />
+                        <TableColumn fx:id="studentTableStudentCourse" editable="false" prefWidth="65.0" text="Course" />
+                        <TableColumn fx:id="studentTableDataStudentDateofBirth" editable="false" prefWidth="56.0" text="DOB" />
+                        <TableColumn fx:id="studentTableDataStudentAge" editable="false" prefWidth="36.0" text="Age" />
+                        <TableColumn fx:id="studentTableDataStudentGender" editable="false" prefWidth="46.0" text="Gender" />
+                        <TableColumn fx:id="studentTableDataStudentLandPhone" editable="false" prefWidth="90.0" text="Land Phone" />
+                        <TableColumn fx:id="studentTableDataStudentMobileNo" editable="false" prefWidth="83.0" text="Mobile No." />
+                        <TableColumn fx:id="studentTableDataStudentStreet" editable="false" prefWidth="102.0" text="Street No." />
+                        <TableColumn fx:id="studentTableDataStudentCity" editable="false" prefWidth="112.0" text="City" />
+                        <TableColumn fx:id="studentTableDataStudentPostal" editable="false" prefWidth="75.0" text="Postal Code" />
+                        <TableColumn fx:id="studentTableDataStudentEmail" editable="false" prefWidth="75.0" text="Email" />
+                        <TableColumn fx:id="studentTableDataStudentSubject" editable="false" prefWidth="75.0" text="Subjects" />
+                        <TableColumn fx:id="studentTableDataStudentRepeatedSubjects" editable="false" prefWidth="75.0" text="Repeated Subjects" />
+                        <TableColumn fx:id="studentTableDataStudentTuition" editable="false" prefWidth="75.0" text="Tuition Fee" />
+                        <TableColumn fx:id="studentTableDataStudentTuitionRep" editable="false" prefWidth="75.0" text="Tuition Fee Repeated" />
+                        <TableColumn fx:id="studentTableDataStudentAmountPaid" editable="false" prefWidth="75.0" text="Amount Paid" />
+                        <TableColumn fx:id="studentTableDataStudentTotalFee" editable="false" prefWidth="75.0" text="Total Fee" />
+                        <TableColumn fx:id="studentTableDataStudentRemainingBalance" editable="false" prefWidth="75.0" text="Remaining Balance" />
+                    </columns>
+                  </TableView>
+                  <JFXButton fx:id="refresh" buttonType="RAISED" layoutX="798.0" layoutY="62.0" onAction="#refreshTable" prefHeight="4.0" prefWidth="73.0" ripplerFill="WHITE" style="-fx-background-color: #09B28C;" text="Refresh" textFill="WHITE">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </JFXButton>
+               </children>
+            </AnchorPane>
+        </items>
+      </SplitPane>
+   </children>
+</AnchorPane>
